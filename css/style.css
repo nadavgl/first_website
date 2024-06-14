@@ -1,37 +1,39 @@
-/*Imports*/
+/* IMPORTS */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+/* VARIABLES */
 @import url(./variables.css);
-
-
 
 /* RESETS */
 * {
   margin: 0;
-  padding: 0;  
-  font-family:'Roboto',sans-serif;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 html, body {
-    height: 100%;
+  height: 100%;
 }
 
 body {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
 }
 
 a {
-  color:#222;
+  color: #222;
 }
 
-/*Comment Styles*/
+img {
+  max-width: 100%;
+}
+
+/* CUSTOM STYLES */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 5%; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 5%;
 }
 
 .logo-link {
@@ -39,105 +41,146 @@ header {
 }
 
 #logo {
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
+/* header nav a:not(:last-child) {
+  margin-right: 25px;
+} */
 
 header nav a {
-    margin-left: 25px;
-    text-decoration:none;
-    padding:5px 8px;
-    border-radius: 5px;
-    transition:background-color .5s; 
-    position:relative;
+  margin-left: 5px;
+  text-decoration: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  transition: background-color .5s;
+  position: relative;
+  color: var(--primary-color);
 }
 
-header nav:after {
+header nav a:after {
   content: '';
   position: absolute;
-  bottom:-2px;
-  left: 0px;
+  bottom: -2px;
+  left: 0;
   width: 100%;
   height: 5px;
   background-color: var(--primary-color);
-  opacity:0;
-  transition:opacity .5s;
-
+  opacity: 0;
+  transition: opacity .5s;
 }
 
 header nav a:hover {
-    background-color:#ddd;
-}
-header nav a:hover:after{
-  opacity: 1;
+  background-color: #ddd;
 }
 
-header nav a.active:after {
-  opacity:1;
-  }
+header nav a:hover:after, header nav a.active:after {
+  opacity: 1;
+}
 
 header nav a.active {
   background-color: #ddd;
 }
 
+figure {
+  display: flex;
+}
+
+figure img {
+  width: 45%;
+}
+
+figure figcaption {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+figure figcaption h3 {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
 
 main {
-  display:flex;
-  flex:1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* justify-content: center;
+  align-items: center; */
+  flex: 1;
 }
 
 section {
-  Flex:1;
-  background-color: #888
+  flex: 1; 
+  background-color: #555;
+}
+
+section div:nth-child(even) {
+  background-color: #888;
+}
+
+section div:nth-child(odd) {
+  background-color: #aaa;
 }
 
 section.right-section {
-  flex:2;
-  background: color #444; 
+  flex: 2;
+  background-color: #444;
 }
 
-#logo {
-    color: var(--primary-color); 
-    font-weight:300;
-  }
+section.right-section .section-header {
+  font-weight: 300;
+}
 
-  .section-header {
-    color: var(--primary-color);
-    font-size: 30px;
-    text-align: center;
-    margin: 20px;
-  }
+.section-header {
+  color: var(--primary-color);
+  font-size: 30px;
+  text-align: center;
+}
 
-  section-div:nth-child(odd) {
-    background-color:#444;
-  }
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 5%;
+}
 
-  footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 5%; 
-  }
+.chat {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: rgba(0, 0, 0, .7);
+  padding: 7px;
+  z-index: 100;
+}
 
-  
-  .chat {
-    position:fixed;
-    bottom: 25px;
-    background-color:rgba(0,0,0,.7); 
-    right: 25px;
-    padding: 7px;
-    z-index: 100;
-  }
-  
-/*RESPONSIVE STYLES*/
-@media (max-width: 600px){
+/* RESPONSIVE STYLES */
+@media (max-width: 600px) {
   main {
     flex-direction: column;
   }
-  footer{
+
+  footer {
     flex-direction: column;
     align-items: center;
   }
+
   footer p {
-    margin: 4px 0; 
+    margin: 4px 0;
+  }
+}
+
+@media (min-width: 900px) {
+  figure {
+    padding: 0 15%;
+  }
+
+  figcaption {
+    font-size: 2.5rem;
+  }
+
+  figcaption p {
+    font-size: 2rem;
   }
 }
 
@@ -145,9 +188,8 @@ section.right-section {
   header {
     padding: 8px 20%;
   }
-  footer{
-    padding: 30px 20%;
+
+  footer {
+   padding: 30px 20%; 
   }
 }
-
-  
