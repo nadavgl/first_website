@@ -83,6 +83,7 @@ header nav a.active {
 
 figure {
   display: flex;
+  margin-bottom: 35px;
 }
 
 figure img {
@@ -105,38 +106,30 @@ figure figcaption h3 {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
   /* justify-content: center;
   align-items: center; */
   flex: 1;
 }
 
-section {
-  flex: 1; 
-  background-color: #555;
+main article{
+  padding:15px;
+  color: #444;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-section div:nth-child(even) {
-  background-color: #888;
+main article.main-article{
+  grid-column: 1 / 4;
+  padding: 80px 25px;
 }
 
-section div:nth-child(odd) {
-  background-color: #aaa;
-}
-
-section.right-section {
-  flex: 2;
-  background-color: #444;
-}
-
-section.right-section .section-header {
-  font-weight: 300;
-}
-
-.section-header {
-  color: var(--primary-color);
-  font-size: 30px;
-  text-align: center;
+main article .article-content {
+  padding:10px;
+  background-color: rgba(250, 250, 250, .6);
+  border-radius: 5px;
 }
 
 footer {
